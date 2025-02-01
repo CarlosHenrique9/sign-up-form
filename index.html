@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign-up page project example using css framework">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Sign-up Form</title>
+</head>
+
+<body>
+  <div class="columns">
+    <div class="column is-4 img-area p-0 has-text-centered">
+      <div class="logo p-3">
+        <figure class="image">
+          <img src="assets/odin-lined.png" alt="odin-logo">
+        </figure>
+        <h1 class="title is-uppercase">Odin</h1>
+      </div>
+      <div class="credits pt-2 pr-2 is-size-7 has-text-light">
+        Image by
+        <a class="mx-1 has-text-light"
+          href="https://unsplash.com/@haliewestphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+          Halie West
+        </a>
+        on
+        <a class="mx-1 has-text-light"
+          href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+          Unsplash
+        </a>
+      </div>
+    </div>
+    <main class="column has-background-light p-0">
+      <div class="section mt-6 is-size-5">
+        <p class="has-text-weight-bold">
+          This is not a real online service! You know you need something like this
+          in your life to help you realize you deepest dreams.
+        </p>
+        <p class="has-text-weight-bold">
+          Sign up <i class="is-italic">now</i> to get started.
+        </p>
+        <p class=" pt-6 has-text-weight-bold">
+          You <i class="is-italic">know</i> you want to.
+        </p>
+      </div>
+      <div class="form section has-background-white">
+        <p class="has-text-weight-bold is-size-5 mb-4">
+          Lets do this!
+        </p>
+        <form id="create-account" action="#" class="columns">
+          <div class="column">
+            <div class="field">
+              <label for="user_first_name" class="label is-uppercase">First name</label>
+              <div class="control">
+                <input id="user_first_name" class="input" type="text" placeholder="e.g. John" minlength="3" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="user_email" class="label is-uppercase">Email</label>
+              <div class="control">
+                <input id="user_email" class="input" type="email" placeholder="example@google.com" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="user_password" class="label is-uppercase">Password</label>
+              <div class="control">
+                <input id="user_password" class="input" type="password" placeholder="8 characters minimum" minlength="8"
+                  required>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label for="user_last_name" class="label is-uppercase">Last name</label>
+              <div class="control">
+                <input id="user_last_name" class="input" type="text" placeholder="e.g. Doe" minlength="3" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="user_phone" class="label is-uppercase">Phone number</label>
+              <div class="control">
+                <input id="user_phone" class="input" type="tel" placeholder="e.g. 89003336699" minlength="11"
+                  maxlength="11" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="user_confirm_password" class="label is-uppercase">Confirm password</label>
+              <div class="control">
+                <input id="user_confirm_password" class="input" type="password" placeholder="8 characters minimum"
+                  minlength="8" required>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="section">
+        <button id="submit" form="create-account" type="submit" class="button py-5 px-6 has-text-weight-bold ">Create
+          Account</button>
+        <p class="pt-5">
+          Already have an acount? <a class="login-link mx-1 p-1 has-text-weight-bold" href="#">Log In</a>
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const submitButton = document.getElementById("submit");
+    const passwordField = document.getElementById("user_password");
+    const passwordConfirmation = document.getElementById("user_confirm_password");
+
+    submitButton.addEventListener("click", checkPasswords);
+
+    function checkPasswords() {
+      if (passwordField.value !== passwordConfirmation.value) {
+        passwordField.classList.add("is-danger");
+        passwordConfirmation.classList.add("is-danger");
+        alert("Confirmation password doesn't match. Please try again")
+      } else {
+        passwordField.classList.replace("is-danger", "is-success");
+        passwordConfirmation.classList.replace("is-danger", "is-success");
+      }
+    }
+  </script>
+</body>
+
+</html>
