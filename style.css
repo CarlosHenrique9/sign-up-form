@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'Norse Bold';
+  src: url("assets/Norse-Bold.otf");
+}
+
+main.column {
+  min-height: 100vh;
+}
+
+.columns {
+  margin-bottom: 0!important;
+}
+
+.img-area {
+  position: relative;
+  background-image: url(assets/img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logo {
+  position: relative;
+  top: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+;title {
+  font-family: 'Norse Bold';
+  font-size: 5rem;
+  color: white;
+}
+
+.logo img {
+  max-width: 5rem;
+}
+
+.credits a {
+  padding: .3em;
+  text-decoration: underline;
+}
+
+.credits a:hover {
+  color: #596D48;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.form {
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, .1);
+}
+
+@media (min-width: 768px) {
+  .form {
+    max-height: 400px;
+  }
+}
+
+label {
+  letter-spacing: .1em;
+}
+
+input:not([type="password"]):valid {
+  border-color: #48c78e;
+}
+
+.button {
+  background-color: #596D48;
+  color: white;
+  border-radius: 8px;
+}
+
+.button:hover {
+  outline: 1px solid white;
+  outline-offset: -5px;
+  color: white;
+}
+
+.button:focus {
+  outline: 1pc solid white;
+  outline-offset: -5px;
+  color: white;
+}
+
+.login-link {
+  color: #596D48;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.login-link:focus {
+  outline: 2px solid #596D48;
+}
